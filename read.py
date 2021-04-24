@@ -8,8 +8,10 @@ with open ('reviews.txt', 'r') as c:
 		if count % 1000 == 0: # % 用來求餘數, 1000的餘數是0 = 1000的倍數
 			print(len(data))
 
-print(len(data))
+print('檔案讀取完了, 總共有', len(data), '筆資料')
 
-print(data[0])
-print('------------------------')
-print(data[1])
+sum_len = 0
+for d in data:
+	sum_len += len(d)
+
+print('每筆留言的平均長度為', sum_len / len(data))
